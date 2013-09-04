@@ -1,8 +1,8 @@
-Toggl API Ruby Clien 
+Toggl API Ruby Client
 =======
 # TogglApi
 
-A Ruby interface to the Toggl API https://github.com/toggl/toggl_api_docs
+A Ruby interface to the [Toggl](https://github.com/toggl/toggl_api_docs/blob/master/toggl_api.md) and [Reports](https://github.com/toggl/toggl_api_docs/blob/master/reports.md) API 
 
 ## Installation
 
