@@ -20,6 +20,8 @@ Or install it yourself as:
 
 ## Usage
 
+### Base Api
+
      base = Toggl::Base.new "2a9800b95ef1d8d2b61d630f5df448f8" 
 
      base.me(true) ##will return current user data with related data, default is false
@@ -27,8 +29,15 @@ Or install it yourself as:
      base.time_entries(Date.today) ##return today's entries
 
      entries = base.time_entries(Date.today - 1, Date.today) ##return yesterday's entries
-
      entries.first.description ##get description for the first entry
+
+### Report Api
+
+     report = Toggl::Report.new "2a9800b95ef1d8d2b61d630f5df448f8" 
+
+     report.weekly('wid')
+     report.details('wid')
+     report.summary('wid')
 
 ## Contributing
 

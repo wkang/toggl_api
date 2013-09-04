@@ -3,8 +3,6 @@ require File.expand_path '../helper.rb', __FILE__
 class ClientTest < MiniTest::Unit::TestCase
 
   def setup
-    @name = "abc"
-    @pass = "123"
     @base = Toggl::Base.new('abc','123')
   end
 

@@ -1,0 +1,8 @@
+ {
+    "error": {
+      "message":"We are sorry, this Error should never happen to you",
+      "tip":"Please contact support@toggl.com with information on your request",
+      "code":500
+    }
+  }
+
