@@ -1,0 +1,12 @@
+[
+    {
+        "id":3134975,
+        "name":"John's personal ws",
+        "at":"2012-12-03T13:06:06+00:00"
+    },{
+        "id":777,
+        "name":"My Company Inc",
+        "premium":true,
+        "at":"2012-09-03T11:30:32+00:00"
+    }
+]

@@ -1,5 +1,6 @@
-require "toggl_api/version"
+require 'multi_json'
+require 'faraday'
+require 'hashie'
 
-module TogglApi
-  # Your code goes here...
-end
+require "toggl_api/version"
+require 'toggl_api/base'

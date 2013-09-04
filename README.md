@@ -2,7 +2,7 @@ Toggl API Ruby Clien
 =======
 # TogglApi
 
-Toggl API Ruby Client
+A Ruby interface to the Toggl API https://github.com/toggl/toggl_api_docs
 
 ## Installation
 
@@ -20,7 +20,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+> base = Toggl::Base.new "2a9800b95ef1d8d2b61d630f5df448f8" 
+> base.me(true) #will return current user data with related data, default is false
+> base.time_entries(Date.today) #return today's entries
+> entries = base.time_entries(Date.today - 1, Date.today) #return yesterday's entries
+> entries.first.description #get description for the first entry
 
 ## Contributing
 
