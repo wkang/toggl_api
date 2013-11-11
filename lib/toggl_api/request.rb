@@ -16,15 +16,24 @@ module Toggl
         :headers => {
         :accept => 'application/json',
         :user_agent => user_agent,
+        'Content-Type' => 'application/json'
         }
       }
     end
 
     #perform http request
-    %w[get post put delete].each do |method|
+    %w[get delete].each do |method|
       class_eval <<-RUBY, __FILE__, __LINE__ + 1
         def #{method}(path, params={})
           request(:#{method}, path, params)
+        end
+      RUBY
+    end
+    
+    %w[post put].each do |method|
+      class_eval <<-RUBY, __FILE__, __LINE__ + 1
+        def #{method}(path, params={})
+          request(:#{method}, path, MultiJson.dump(params))
         end
       RUBY
     end
@@ -39,6 +48,7 @@ module Toggl
 
     def connection
       @connection ||= Faraday.new(ENDPOINT,connection_options) do |faraday|
+        faraday.request :url_encoded  
         faraday.adapter Faraday.default_adapter
         faraday.basic_auth @username, @pass
       end 

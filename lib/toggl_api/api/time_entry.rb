@@ -17,7 +17,7 @@ module Toggl
 
       def create_time_entry(options)
         options = options.merge({:created_with => "Toggl Api Ruby Gem #{Toggl::VERSION}"})
-        post "/time_entries", options
+        post "/time_entries", (options.key?(:time_entry) ? options : {:time_entry => options})
       end
 
       def start_time_entry(options)
