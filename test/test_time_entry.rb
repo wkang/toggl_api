@@ -20,6 +20,13 @@ class TimeEntryTest < MiniTest::Unit::TestCase
     end 
   end
 
+  def test_get_current_time_entry
+    @base.stub :request, Faraday::Response.new(:body => load_fixture('time_entry')) do
+      resp = @base.current_time_entry
+      refute_nil resp.body
+    end
+  end
+
   def test_update_time_entry
     @base.stub :request, Faraday::Response.new(:body => load_fixture('update_time_entry')) do
       resp = @base.update_time_entry(123,{"name" => "test"})

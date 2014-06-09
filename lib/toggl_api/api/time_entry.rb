@@ -55,6 +55,12 @@ module Toggl
 
       alias :time_entries :get_time_entries
 
+      def get_current_time_entry
+        get "time_entries/current"
+      end
+
+      alias :current_time_entry :get_current_time_entry
+
       def update_time_entry(tid,options)
         tid = tid.join(",") if tid.is_a? Array
         options = Hashie::Mash.new options
