@@ -22,6 +22,7 @@ module Toggl
 
       def start_time_entry(options)
         options = Hashie::Mash.new options
+        options = options.merge({:created_with => "Toggl Api Ruby Gem #{Toggl::VERSION}"})
         post "/time_entries/start", (options.key?(:time_entry) ? options : {:time_entry => options})
       end
 
